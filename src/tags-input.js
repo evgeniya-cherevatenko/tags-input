@@ -55,9 +55,9 @@ export default function tagsInput(input) {
 
 		//check input valid data
 		if(!base.input.checkValidity()){
-			let tmpColor = base.input.style.color;
-			base.input.style.color = 'red';
-			setTimeout( () => base.input.style.color=tmpColor , 250);
+
+			base.input.classList.add('wrong-format');
+			setTimeout( () => base.input.classList.remove('wrong-format') , 250);
 			return false;
 		}
 

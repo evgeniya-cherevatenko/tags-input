@@ -52,6 +52,15 @@ export default function tagsInput(input) {
 		// Ignore if text is empty
 		if (!tag) return false;
 
+
+		//check input valid data
+		if(!base.input.checkValidity()){
+			let tmpColor = base.input.style.color;
+			base.input.style.color = 'red';
+			setTimeout( () => base.input.style.color=tmpColor , 250);
+			return false;
+		}
+
 		// For duplicates, briefly highlight the existing tag
 		if (!input.getAttribute('duplicates')) {
 			let exisingTag = $(`[data-tag="${tag}"]`);
